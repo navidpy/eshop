@@ -1,0 +1,135 @@
+{% load static %}
+<footer id="footer"><!--Footer-->
+    <div class="footer-Before hidden-xs">
+        <div class="container">
+            <div class="block-news">
+                <div class="row">
+                    <h3>با عضویت در خبـرنامه ما از تخفیفات ویـژه ما با خبـر شوید ... </h3>
+                    <div class="searchform newslatter">
+                        <input type="text" placeholder="آدرس ایمیـل شما ..."/>
+                        <button type="submit" class="btn btn-default">
+                            <i class="fa fa-arrow-circle-o-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="visible-xs" style="padding: 5px 0px 10px;background: #3A3A3A;color: #fcfcfc;">
+    </div>
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-6 col-md-3 col-lg-3">
+                    <div class="address">
+                        <img src="{{ siteImage.footerSite1.url }}" alt=""/>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xs-6 col-md-3 col-lg-3">
+                    <div class="address">
+                        <img src="{{ siteImage.footerSite2.url }}" alt=""/>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+                    <div class="companyinfo">
+                        <h2>{{ setting.title }}</h2>
+                        <h4>درباره ما :</h4>
+                        <p>
+                            {{ setting.about_us }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-widget">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3">
+                    <div class="single-widget">
+                        <h2>Service</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Online Help</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Order Status</a></li>
+                            <li><a href="#">Change Location</a></li>
+                            <li><a href="#">FAQ’s</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3">
+                    <div class="single-widget">
+                        <h2>Quock Shop</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">T-Shirt</a></li>
+                            <li><a href="#">Mens</a></li>
+                            <li><a href="#">Womens</a></li>
+                            <li><a href="#">Gift Cards</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3">
+                    <div class="single-widget">
+                        <h2>Policies</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privecy Policy</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                            <li><a href="#">Billing System</a></li>
+                            <li><a href="#">Ticket System</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3">
+                    <div class="single-widget">
+                        <h2>About Shopper</h2>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Company Information</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Store Location</a></li>
+                            <li><a href="#">Affillate Program</a></li>
+                            <li><a href="#">Copyright</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{#    <div class="header_tvop"><!--header_top-->#}
+{#        <div class="container">#}
+{#            <div class="row">#}
+{#                <div class="col-sm-6">#}
+{#                    <div class="contactinfo">#}
+{#                        <ul class="nav nav-pills">#}
+{#                            <li><a href="#"><i class="fa fa-phone"></i>{{ setting.phone }}</a></li>#}
+{#                            <li><a href="#"><i class="fa fa-envelope"></i>{{ setting.email }}</a></li>#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="col-sm-6">#}
+{#                    <div class="social-icons pull-right">#}
+{#                        <ul class="nav navbar-nav">#}
+{#                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>#}
+{#                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>#}
+{#                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>#}
+{#                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>#}
+{#                            <li><a href="#"><i class="fa fa-tag"></i></a></li>#}
+{#                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <p class="pull-right" style="direction: rtl">
+                    {{ setting.copy_right }}
+                </p>
+            </div>
+        </div>
+    </div>
+</footer><!--/Footer-->

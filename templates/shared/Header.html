@@ -1,0 +1,64 @@
+{% load static %}{% url 'home' as home_url %}{% url 'product' as product_url %}{% url 'contact' as contact_url %}{% url 'about' as about_url %}{% url 'blog' as blog_url %}{% load render_partial %}
+<header id="header" class="round"><!--header-->
+    <div class="header-middle"><!--header-middle-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4" style="text-align: left;">
+                    <div class="logo">
+                        <a href="/"><img src="{{ siteImage.HeaderSite.url }}" alt="Logo"
+                                         style="text-align: center;"/></a>
+                    </div>
+                </div>
+                <div class="col-sm-8 header-middle-menu">
+                    <div class="shop-menu pull-right">
+                        <ul class="nav navbar-nav">{% if not request.user.is_authenticated %}
+                            <li><a href="/login"><i class="fa fa-lock"></i> ورود</a></li>
+                            <li><a href="/register"><i class="fa fa-sign-in"></i> ثبت نام</a></li>{% else %}
+                            <li><a href="/user"><i class="fa fa-user"></i> حساب کاربـری</a></li>
+                            <li><a href="/user/interests"><i class="fa fa-star"></i> لیست علاقه مندی ها</a></li>
+                            <li><a href="/open-order"><i class="fa fa-shopping-cart"></i> سبد خریـد</a></li>
+                            <li><a href="/log-out"><i class="fa fa-sign-out"></i> خروچ</a></li>{% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--/header-middle-->
+    <div class="header-bottom"><!--header-bottom-->
+        <div class="container">
+            <div class="row">
+                <div class="pull-left col-xs-offset-1">
+                    <div class="search_box pull-left">
+                        <form action="/products/search" method="get">
+                            <input type="text" placeholder="جستـجو" value="{{ request.GET.q }}" autocomplete="off" name="q">
+                        </form>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="navbar-header pull-right">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="mainmenu pull-right ">
+                        <ul class="nav navbar-nav collapse navbar-collapse">
+                            <li><a href="/" class="{% if request.path == home_url %}active{% endif %}">خـانه</a></li>
+                            <li><a href="/products" class="{% if request.path == product_url %}active{% endif %}">محصولات</a>
+                            </li>
+                            <li><a href="/blog" class="{% if request.path == blog_url %}active{% endif %}"> وبلاگ</a>
+                            </li>
+                            <li><a href="/about-us" class="{% if request.path == about_url %}active{% endif %}">درباره
+                                مـا</a></li>
+                            <li><a href="/contact-us" class="{% if request.path == contact_url %}active{% endif %}">تماس
+                                با مـا</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--/header-bottom-->
+</header><!--/header-->

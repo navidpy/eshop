@@ -1,0 +1,123 @@
+{% extends "shared/_MainLayout.html" %}
+{% load static %}
+{% block header_ref %}<title>صفحه اصلی | {{ setting.title }}</title>
+    <meta name="description" content="{{ setting.description }}">{% endblock %}
+{% block content %}
+    <section id="slider"><!--slider-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#slider-carousel" data-slide-to="1"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            {% for slider in sliders %}
+                                <div class="item {{ forloop.first|yesno:"active," }}">
+                                    <div class="col-sm-6">
+                                        <h1><span>{{ setting.title }}</span></h1>
+                                        <h2>{{ slider.title }}</h2>
+                                        <p>{{ slider.description }}</p>
+                                        <a href="{{ slider.link }}" target="_blank">
+                                            <button type="button" class="btn btn-default get" title="توضیحات">توضیحات
+                                                بیشتر
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <img src="{{ slider.image.url }}" class="girl img-responsive"
+                                             alt="image-slider"/>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/slider-->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="recommended_items"><!--NewProduct_items-->
+                    <h2 class="title text-center">پر بازدیدترین محصولات</h2>
+                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for group in most_visit %}
+                                <div class="item {{ forloop.first|yesno:"active," }}"
+                                     style="padding-left: 5px;padding-right: 5px">
+                                    {% for product in group %}
+                                        <div class="col-sm-3">
+                                            {% include 'products/product_item_component.html' with product=product %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div><!--/NewProduct_items-->
+                <div class="recommended_items"><!--NewProduct_items-->
+                    <h2 class="title text-center">آخرین محصولات</h2>
+                    <div id="recommended-item-carousel-end" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for group in latest_products %}
+                                <div class="item {{ forloop.first|yesno:"active," }}"
+                                     style="padding-left: 5px;padding-right: 5px">
+                                    {% for product in group %}
+                                        <div class="col-sm-3">
+                                            {% include 'products/product_item_component.html' with product=product %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <a class="left recommended-item-control" href="#recommended-item-carousel-end"
+                           data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right recommended-item-control" href="#recommended-item-carousel-end"
+                           data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div><!--/NewProduct_items-->
+            </div><!--RetailSale_items-->
+            <h2 class="title text-center">محبوب ترین های هر دسته بندی</h2>
+            <div class="category-tab"><!--category-tab-->
+                <div class="col-sm-12">
+                    <ul class="nav nav-tabs">
+                        {% for category in categories %}
+                            <li class="{{ forloop.first|yesno:"active," }}"><a href="#Tab_00{{ forloop.counter }}"
+                                                                               data-toggle="tab">{{ category }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content">
+                {% for category in listOfCategory %}
+                    <div class="tab-pane fade {{ forloop.first|yesno:"active in," }}"
+                         id="Tab_00{{ forloop.counter }}">
+                        {% for product in category %}
+                            <div class="col-sm-3">
+                                {% include 'products/product_item_component.html' with product=product %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

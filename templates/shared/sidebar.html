@@ -1,0 +1,52 @@
+{% load render_partial %}
+{% load static %}
+<div class="col-sm-3">
+    <div class="left-sidebar">
+        <h2>دسته بندی محصولات</h2>
+        <div class="panel-group category-products round" id="accordian"><!--category-productsr-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="/products">همه </a></h3>
+                </div>
+            </div>
+            {% for category in categories %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a
+                                href="/products/category/{{ category.name }}">{{ category.title }}</a></h4>
+                    </div>
+                </div>
+            {% endfor %}
+        </div><!--/category-productsr-->
+        <div class="brands_products"><!--brands_products-->
+            <h2>برنـد ها</h2>
+            <div class="panel-group category-products round" id="accordian">
+                {% for brand in brands %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><a href="/products/brand/{{ brand.name }}">{{ brand.title }}</a>
+                            </h4>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div><!--/brands_products-->
+        <div class="price-range text-center"><!--price-range-->
+            <h2>فیلتـر قیمـت</h2>
+            <div class="well round btn-block">
+                <form action="/products/filter">
+                    <input type="text" class="span2 btn-block" value="" data-slider-min="0" data-slider-max="1000000"
+                           data-slider-step="5" data-slider-value="[250,450]" id="sl2" name="price"><br/>
+                    <b>1.000.000 تومان</b> <b class="pull-left">0 تومان</b>
+                    <br>
+                    <button type="submit" class="btn btn-default get">اعمال</button>
+                </form>
+            </div>
+        </div><!--/price-range-->
+        <div class="shipping text-center round">
+            <a href="{{ siteImage.advertiseUrl }}" target="_blank">
+                <img src="{{ siteImage.advertiseImage.url }}" alt="تبلیغات" title="تبلیغات"/>
+            </a>
+        </div><!--/shipping-->
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{% load render_partial %}<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="navid.py">
+    <meta name="robots" content="index, follow"/>
+    <meta name="googlebot" content="index,follow">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="google-site-verification" content="{{ setting.verification }}" />
+    <meta name="keywords" content="{{ setting.keywords }}">
+    <meta property="og:site_name" content="{{ setting.title }}">
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ setting.title }}">
+    <meta property="og:url" content="{{ setting.address_web }}">
+    <meta property="og:image" content="{{ siteImage.HeaderSite.url }}">
+    <meta property="og:image:url" content="{{ siteImage.icon.url }}">
+    <meta property="og:image:type" content=image/png>
+    <meta property="og:description" content="{{ setting.description }}">
+    <meta property="og:price:currency" content="IRR">
+    <meta property="og:locale" content="ir_FA">
+    <meta name="twitter:title" content="{{ setting.title }}">
+    <meta name="twitter:description" content="{{ setting.description }}">
+    <meta name="twitter:image" content="{{ siteImage.icon.url }}">
+    <meta name="twitter:card" content=summary_large_image>
+    <link rel="canonical" href="{{ setting.address_web }}"/>

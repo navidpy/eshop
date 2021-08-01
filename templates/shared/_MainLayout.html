@@ -1,0 +1,11 @@
+{% load static %}{% load render_partial %}<!DOCTYPE html>
+<html lang="fa-IR">
+<head>
+    {% render_partial 'eshop.views.meta' %}
+    {% block header_ref %}{% endblock %}
+    {% render_partial 'eshop.views.icon' %}{% include "shared/_HeaderReferences.html" %}
+</head>
+<body>{% render_partial 'eshop.views.header' %}
+        {% block content %}{% endblock %}{% render_partial 'eshop.views.footer' %}{% include "shared/_FooterReferences.html" %}
+        {% block footer_ref %}{% endblock %}</body>
+</html>
